@@ -39,7 +39,3 @@ Thumbs.db
 # App generated files #
 ######################
 .vscode
-
-# Local image
-json2hcl
-output-jammy

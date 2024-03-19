@@ -42,10 +42,10 @@ packer plugins install github.com/digitalocean/digitalocean
 
 ## Building the Image
 
-Ensure that the `DIGITALOCEAN_TOKEN` and `OCTOBOT_VERSION` environment variable are set, you can build the image using the following command:
+Ensure that the `DIGITALOCEAN_TOKEN` environment variable is set, you can build the image using the following command:
 
 ```bash
-OCTOBOT_VERSION=1.0.8 packer build marketplace-image.json
+packer build marketplace-image.json
 ```
 
 The above command will install dependencies, clean and prepare for a snapshot, power down the VM, take a snapshot, and then remove the VM.
@@ -53,22 +53,3 @@ The above command will install dependencies, clean and prepare for a snapshot, p
 Once the process is complete (usually within 10-15 minutes), you will see a success message in your terminal. Additionally, you can find the final image under the "Images" section in the "Manage" menu on the DigitalOcean website.
 
 You can now use this image to submit to the Marketplace through the vendor portal.
-
-
-## Building the local Image
-
-### Setup
-#### Install virtualbox
-```bash
-sudo apt-get install virtualbox -y
-```
-
-#### Install virtualbox plugin
-```bash
-packer plugins install github.com/hashicorp/virtualbox
-```
-
-### Build
-```bash
-OCTOBOT_VERSION=1.0.8 packer build local-image.pkr.hcl
-```

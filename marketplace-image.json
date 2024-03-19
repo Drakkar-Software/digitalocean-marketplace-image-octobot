@@ -1,10 +1,10 @@
 {
   "variables": {
     "do_token": "{{env `DIGITALOCEAN_TOKEN`}}",
-    "image_name": "octobot-{{env `OCTOBOT_VERSION`}}-ubuntu-22-04-{{timestamp}}",
+    "image_name": "octobot-1.0.0-ubuntu-22-04-{{timestamp}}",
     "apt_packages": "git build-essential curl ca-certificates fail2ban",
     "application_name": "octobot",
-    "application_version": "{{env `OCTOBOT_VERSION`}}"
+    "application_version": "1.0.0"
   },
   "sensitive-variables": ["do_token"],
   "builders": [
