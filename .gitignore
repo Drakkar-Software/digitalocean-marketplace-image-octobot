@@ -40,4 +40,6 @@ Thumbs.db
 ######################
 .vscode
 
-.Rproj.user
+# Local image
+json2hcl
+output-jammy

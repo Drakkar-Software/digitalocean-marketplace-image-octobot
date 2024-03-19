@@ -54,3 +54,21 @@ Once the process is complete (usually within 10-15 minutes), you will see a succ
 
 You can now use this image to submit to the Marketplace through the vendor portal.
 
+
+## Building the local Image
+
+### Setup
+#### Install virtualbox
+```bash
+sudo apt-get install virtualbox -y
+```
+
+#### Install virtualbox plugin
+```bash
+packer plugins install github.com/hashicorp/virtualbox
+```
+
+### Build
+```bash
+OCTOBOT_VERSION=1.0.8 packer build local-image.pkr.hcl
+```
