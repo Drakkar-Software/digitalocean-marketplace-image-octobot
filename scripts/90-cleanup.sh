@@ -25,6 +25,9 @@ elif [ -n "$(command -v apt-get)" ]; then
   apt-get -y autoclean
 fi
 
+# Uninstall unecessary logging package 
+sudo apt-get purge --autoremove ubuntu-advantage-tools
+
 rm -rf /tmp/* /var/tmp/*
 history -c
 cat /dev/null > /root/.bash_history

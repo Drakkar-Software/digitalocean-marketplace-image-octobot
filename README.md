@@ -8,8 +8,8 @@ This README provides instructions for creating an OctoBot golden image using Pac
 
 Before proceeding, make sure you have a DigitalOcean account and create a personal access token. Follow these steps:
 
-1. Log in to your DigitalOcean account and go to the "Manage" section in the left-most navigation menu.
-2. Select "API" and then click on "Generate New Token".
+1. Log in to your DigitalOcean account and go to the "API" section in the left-most navigation menu.
+2. Click on "Generate New Token".
 3. Provide a token name, expiration, and give read and write scopes.
 4. Click on "Generate Token" to create the token.
 5. Once generated, make sure to copy and securely store the token. It will not be shown again.
