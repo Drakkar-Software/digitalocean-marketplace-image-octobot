@@ -20,13 +20,13 @@ if [ -n "$(command -v yum)" ]; then
 elif [ -n "$(command -v apt-get)" ]; then
   export DEBIAN_FRONTEND=noninteractive
   apt-get -y update
-  apt-get -o Dpkg::Options::="--force-confold" upgrade -q -y --force-yes
+  apt-get -o Dpkg::Options::="--force-confold" upgrade -q -y
   apt-get -y autoremove
   apt-get -y autoclean
 fi
 
 # Uninstall unecessary logging package 
-sudo apt-get purge --autoremove ubuntu-advantage-tools
+sudo apt-get purge --autoremove ubuntu-advantage-tools -q -y
 
 rm -rf /tmp/* /var/tmp/*
 history -c

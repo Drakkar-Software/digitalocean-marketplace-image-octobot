@@ -11,4 +11,4 @@ ufw limit ssh
 ufw allow http
 ufw allow https
 
-ufw enable
+ufw --force enable

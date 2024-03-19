@@ -1,0 +1,34 @@
+name: OctoBot Digital Ocean image
+on:
+  push:
+    branches:
+      - "master"
+    tags:
+      - "*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout tree
+        uses: actions/checkout@v4
+
+      - name: Use latest Packer
+        uses: hashicorp-contrib/setup-packer@v3
+
+      - name: Install DO plugin
+        run: packer plugins install github.com/digitalocean/digitalocean
+
+      - name: Build image
+        env:
+          DIGITALOCEAN_TOKEN: ${{ secrets.DIGITALOCEAN_TOKEN }}
+        run: packer build marketplace-image.json
+        
+  notify:
+    if: ${{ failure() }}
+    needs:
+      - build
+    uses: Drakkar-Software/.github/.github/workflows/failure_notify_workflow.yml@master
+    secrets:
+      DISCORD_GITHUB_WEBHOOK: ${{ secrets.DISCORD_GITHUB_WEBHOOK }}
