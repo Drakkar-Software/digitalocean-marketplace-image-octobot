@@ -47,3 +47,9 @@ The secure erase will complete successfully when you see:${NC}
 Beginning secure erase now\n"
 
 dd if=/dev/zero of=/zerofile bs=4096 || rm /zerofile
+
+# Uninstall the agent and remove the DO directory: 
+sudo apt-get purge droplet-agent -y
+
+# Remove un-cleared logs
+rm -f /var/log/*.log
